@@ -1,13 +1,14 @@
 set nocompatible   " Disable vi-compatibility
 set t_Co=256
  
-colorscheme xoria256
+execute pathogen#infect()
+colorscheme gruvbox
+set background dark
 set guifont=menlo\ for\ powerline:h16
 set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
 set go-=L " Removes left hand scroll bar
 set linespace=15
- 
 set showmode                    " always show what mode we're currently editing in
 set nowrap                      " don't wrap lines
 set tabstop=4                   " a tab is four spaces
@@ -28,6 +29,7 @@ set visualbell           " don't beep
 set noerrorbells         " don't beep
 set autowrite  "Save on buffer switch
 set mouse=a
+
  
 " With a map leader it's possible to do extra key combinations
 " " like <leader>w saves the current file
@@ -42,7 +44,7 @@ set mouse=a
 " nnoremap k gk
 "  
 " "Easy escaping to normal model
-" imap jj <esc>
+ imap jj <esc>
 "  
 " "Auto change directory to match current file ,cd
 " nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
@@ -81,10 +83,7 @@ set mouse=a
 " set backupdir=~/.vim/backup//
 " set directory=~/.vim/swap//
 "  
-" " Run PHPUnit tests
-" map <Leader>t :!phpunit %<cr>
-"  
-" " Easy motion stuff
+" Easy motion stuff
 " let g:EasyMotion_leader_key = '<Leader>'
 "  
 " " Powerline (Fancy thingy at bottom stuff)
@@ -118,74 +117,9 @@ set mouse=a
 " " Edit todo list for project
 " nmap ,todo :e todo.txt<cr>
 "  
-" " Laravel framework commons
-" nmap <leader>lr :e app/routes.php<cr>
-" nmap <leader>lca :e app/config/app.php<cr>81Gf(%O
-" nmap <leader>lcd :e app/config/database.php<cr>
-" nmap <leader>lc :e composer.json<cr>
-"  
-" " Concept - load underlying class for Laravel
-" function! FacadeLookup()
-"     let facade = input('Facade Name: ')
-"         let classes = {
-"         \       'Form': 'Html/FormBuilder.php',
-"         \       'Html': 'Html/HtmlBuilder.php',
-"         \       'File': 'Filesystem/Filesystem.php',
-"         \       'Eloquent': 'Database/Eloquent/Model.php'
-"         \   }
-"          
-"             execute ":edit vendor/laravel/framework/src/Illuminate/" . classes[facade]
-"             endfunction
-"             nmap ,lf :call FacadeLookup()<cr>
-"              
-"             " CtrlP Stuff
-"              
-"             " Familiar commands for file/symbol browsing
-"             map <D-p> :CtrlP<cr>
-"             map <C-r> :CtrlPBufTag<cr>
-"              
-"             " I don't want to pull up these folders/files when calling CtrlP
-"             set wildignore+=*/vendor/**
-"             set wildignore+=*/public/forum/**
-"              
-"             " Open splits
+             " Open splits
 "             nmap vs :vsplit<cr>
 "             nmap sp :split<cr>
 "              
 "             " Create/edit file in the current directory
 "             nmap :ed :edit %:p:h/
-"              
-"             " Prepare a new PHP class
-"             function! Class()
-"                 let name = input('Class name? ')
-"                     let namespace = input('Any Namespace? ')
-"                      
-"                         if strlen(namespace)
-"                                 exec 'normal i<?php namespace ' . namespace . ';
-"                                     else
-"                                             exec 'normal i<?php
-"                                                 endif
-"                                                  
-"                                                     " Open class
-"                                                         exec 'normal iclass ' . name . ' {^M}^[O^['
-"                                                             
-"                                                                 exec 'normal i^M    public function __construct()^M{^M ^M}^['
-"                                                                 endfunction
-"                                                                 nmap ,1  :call Class()<cr>
-"                                                                  
-"                                                                 " Add a new dependency to a PHP class
-"                                                                 function! AddDependency()
-"                                                                     let dependency = input('Var Name: ')
-"                                                                         let namespace = input('Class Path: ')
-"                                                                          
-"                                                                             let segments = split(namespace, '\')
-"                                                                                 let typehint = segments[-1]
-"                                                                                  
-"                                                                                     exec 'normal gg/construct^M:H^Mf)i, ' . typehint . ' $' . dependency . '^[/}^>O<his->^[a' . dependency . ' = $' . dependency . ';^[?{^MkOprotected $' . dependency . ';^M^[?{^MOuse ' . namespace . ';^M^['
-"                                                                                      
-"                                                                                         " Remove opening comma if there is only one dependency
-"                                                                                             exec 'normal :%s/(, /(/g
-"                                                                                             '
-"                                                                                             endfunction
-"                                                                                             nmap ,2  :call AddDependency()<cr>
-"                                                                                             >
