@@ -80,4 +80,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias c='clear'
 alias x='exit'
-
+alias express_install='npm install --save-dev express body-parser compression cookie-parser morgan express-session serve-favicon response-time errorhandler method-override connect-timeout vhost csurf serve-index serve-static'
+alias gulp_install='npm install --save-dev  gulp gulp-connect gulp-concat gulp-jasmine-phantom gulp-jade gulp-coffee gulp-stylus gulp-csslint gulp-jshint gulp-utils gulp-watch'
+alias node_install='npm install --save-dev coffee jade stylus jasmine mongoose mongodb'
+alias pencilblue_install='git clone https://github.io/musamanyama/pencilblue.git; gulp_install'

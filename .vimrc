@@ -1,9 +1,8 @@
 set nocompatible   " Disable vi-compatibility
 set t_Co=256
- 
 execute pathogen#infect()
 colorscheme gruvbox
-set background dark
+set background=dark
 set guifont=menlo\ for\ powerline:h16
 set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
@@ -29,19 +28,20 @@ set visualbell           " don't beep
 set noerrorbells         " don't beep
 set autowrite  "Save on buffer switch
 set mouse=a
+filetype indent on
+filetype plugin on
 
- 
 " With a map leader it's possible to do extra key combinations
 " " like <leader>w saves the current file
-" let mapleader = ","
-" let g:mapleader = ","
+let mapleader = ","
+let g:mapleader = ","
 "  
 " " Fast saves
-" nmap <leader>w :w!<cr>
+nmap <leader>w :w!<cr>
 "  
 " " Down is really the next line
-" nnoremap j gj
-" nnoremap k gk
+nnoremap j gj
+nnoremap k gk
 "  
 " "Easy escaping to normal model
  imap jj <esc>
@@ -52,8 +52,6 @@ set mouse=a
 " "easier window navigation
 "  
 " nmap <C-h> <C-w>h
-" nmap <C-j> <C-w>j
-" nmap <C-k> <C-w>k
 " nmap <C-l> <C-w>l
 "  
 " "Resize vsplit
@@ -62,20 +60,20 @@ set mouse=a
 " nmap 50 <c-w>=
 " nmap 75 :vertical resize 120<cr>
 "  
-" nmap <C-b> :NERDTreeToggle<cr>
+nmap <C-b> :NERDTreeToggle<cr>
 "  
 " "Load the current buffer in Chrome
 " nmap ,c :!open -a Google\ Chrome<cr>
 "  
 " "Show (partial) command in the status line
-" set showcmd
+set showcmd
 "  
 " " Create split below
-" nmap :sp :rightbelow sp<cr>
+nmap :sp :rightbelow sp<cr>
 "  
 " " Quickly go forward or backward to buffer
-" nmap :bp :BufSurfBack<cr>
-" nmap :bn :BufSurfForward<cr>
+nmap :bp :BufSurfBack<cr>
+nmap :bn :BufSurfForward<cr>
 "  
 " highlight Search cterm=underline
 "  
@@ -104,22 +102,12 @@ set mouse=a
 " autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 " autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 "  
-" " Abbreviations
-" abbrev pft PHPUnit_Framework_TestCase
-"  
-" abbrev gm !php artisan generate:model
-" abbrev gc !php artisan generate:controller
-" abbrev gmig !php artisan generate:migration
-"  
-" " Auto-remove trailing spaces
-" autocmd BufWritePre *.php :%s/\s\+$//e
-"  
 " " Edit todo list for project
 " nmap ,todo :e todo.txt<cr>
 "  
-             " Open splits
-"             nmap vs :vsplit<cr>
-"             nmap sp :split<cr>
+" Open splits
+ nmap vs :vsplit<cr>
+ nmap sp :split<cr>
 "              
-"             " Create/edit file in the current directory
-"             nmap :ed :edit %:p:h/
+" Create/edit file in the current directory
+" nmap :ed :edit %:p:h/
