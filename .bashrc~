@@ -113,18 +113,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#Making some sourcer
-sourcer(){
-    source $HOME/bin/dotfiles/chores
-    source $HOME/bin/dotfiles/.bashrc
-    source $HOME/bin/dotfiles/.zshrc
-    source $HOME/.config/fish/functions/fish_prompt.fish
-}
-
-# Ranger settings..
-export EDITOR=vim
-
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:/usr/local/packer" #Add packer to PATH...
 export PATH="$PATH:/usr/local/bin/blender" #Adding blender to PATH
-export PATH="$PATH:/usr/local/bin/vifm" #Adding vifm to PATH..
+export PATH="PATH:/usr/local/bin/vifm" #Adding vifm to PATH..

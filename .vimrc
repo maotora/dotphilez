@@ -39,6 +39,8 @@ let g:mapleader = ","
 " " Fast saves
 nmap <leader>w :w!<cr>
 "  
+" Fast quit
+nmap <leader>q :q!<cr>
 " " Down is really the next line
 nnoremap j gj
 nnoremap k gk

@@ -49,7 +49,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/home/maotora/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/home/maotora/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -66,6 +66,17 @@ source $ZSH/oh-my-zsh.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
+#
+# Ranger settings..
+export EDITOR=vim
+
+#Making some sourcer
+sourcer(){
+    source $HOME/bin/dotfiles/chores
+    source $HOME/bin/dotfiles/.bashrc
+    source $HOME/bin/dotfiles/.zshrc
+    source $HOME/.config/fish/functions/fish_prompt.fish
+}
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
@@ -81,6 +92,12 @@ source $ZSH/oh-my-zsh.sh
 alias c='clear'
 alias x='exit'
 alias express_install='npm install --save-dev express body-parser compression cookie-parser morgan express-session serve-favicon response-time errorhandler method-override connect-timeout vhost csurf serve-index serve-static'
-alias gulp_install='npm install --save-dev  gulp gulp-connect gulp-concat gulp-jasmine-phantom gulp-jade gulp-coffee gulp-stylus gulp-csslint gulp-jshint gulp-utils gulp-watch'
+alias gulp_install='npm install --save-dev  gulp gulp-connect gulp-concat gulp-jasmine-phantom gulp-jade gulp-coffee gulp-stylus gulp-csslint gulp-jshint gulp-util gulp-watch'
 alias node_install='npm install --save-dev coffee jade stylus jasmine mongoose mongodb'
-alias pencilblue_install='git clone https://github.io/musamanyama/pencilblue.git; gulp_install'
+alias pencilblue_install='git clone https://github.com/musamanyama/pencilblue.git; gulp_install'
+alias frontend_install='bower install --save-dev angular angular-filter angular-movement angular-dragdrop angular-carousel ngstorage ng-sortable angular-validation jquery'
+alias frontend_ui_install='bower install --save-dev angularui ui-utils ui-modules ui-bootstrap ng-grid ui-router ui-select ui-gmap'
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:/bin/local/bin/bundler" #Adding bundler to env.
+export PATH="$PATH:/usr/local/packer" #Adding packer to env.
