@@ -10,10 +10,10 @@ retake(){
 }
 
 multipleRedirect(){
-    $fileOne=$1
-    $fileTwo=$2
-    $command=$3
-    $param=$4
+    fileOne=$1
+    fileTwo=$2
+    command=$3
+    param=$4
 
     $command $param >> $fileOne; $command $param >> $fileTwo
 
