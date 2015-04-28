@@ -47,6 +47,9 @@ nnoremap k gk
 "  
 " "Easy escaping to normal model
  imap jj <esc>
+
+" Mapping redo..
+nmap rr :redo<cr>
 "  
 " "Auto change directory to match current file ,cd
 " nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
