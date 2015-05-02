@@ -101,3 +101,4 @@ alias frontend_ui_install='bower install --save-dev angularui ui-utils ui-module
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:/bin/local/bin/bundler" #Adding bundler to env.
 export PATH="$PATH:/usr/local/packer" #Adding packer to env.
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

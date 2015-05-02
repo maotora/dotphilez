@@ -128,3 +128,4 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:/usr/local/packer" #Add packer to PATH...
 export PATH="$PATH:/usr/local/bin/blender" #Adding blender to PATH
 export PATH="$PATH:/usr/local/bin/vifm" #Adding vifm to PATH..
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
