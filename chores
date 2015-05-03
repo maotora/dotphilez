@@ -5,9 +5,17 @@ take(){
 mountie(){
     python3 /home/maotora/mountie/mountie.py
 }
+
 retake(){
     current=$(basename `pwd`)
-    mv --verbose * ../; cd ..; rmdir $current
+    files=$(ls)
+
+    if [ -z $files ]
+    then
+        cd ..; rmdir $current
+    else
+        mv --verbose * ../; cd ..; rmdir $current
+    fi
 }
 
 multipleRedirect(){
