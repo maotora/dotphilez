@@ -90,10 +90,14 @@ nmap :bn :BufSurfForward<cr>
 " let g:EasyMotion_leader_key = '<Leader>'
 "  
 " " Powerline (Fancy thingy at bottom stuff)
-" let g:Powerline_symbols = 'fancy'
-" set laststatus=2   " Always show the statusline
-" set encoding=utf-8 " Necessary to show Unicode glyphs
-" set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+
+let g:Powerline_symbols = 'fancy'
+set laststatus=2   " Always show the statusline
+set encoding=utf-8 " Necessary to show Unicode glyphs
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 "  
 " autocmd cursorhold * set nohlsearch
 " autocmd cursormoved * set hlsearch
